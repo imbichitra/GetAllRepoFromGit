@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="user"
+            type="com.bichi.getallrepofromgit.model.User" />
+
+        <variable
+            name="listner"
+            type="com.bichi.getallrepofromgit.view.MyInterface" />
+    </data>
+
+    <LinearLayout
+        android:onClick="@{()->listner.userClicked(user)}"
+        android:background="@color/colorAccent"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:text="@{user.name}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:text="@{user.fullName}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:text="@{user.description}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:text="@{user.language}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:text="@{user.owner.login}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

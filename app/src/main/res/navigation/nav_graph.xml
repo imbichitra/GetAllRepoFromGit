@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/userFragment">
+
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.bichi.getallrepofromgit.view.UserFragment"
+        android:label="UserFragment" >
+        <action
+            android:id="@+id/action_userFragment_to_userLisFragment"
+            app:destination="@id/userLisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userLisFragment"
+        android:name="com.bichi.getallrepofromgit.view.UserLisFragment"
+        android:label="UserLisFragment" >
+        <action
+            android:id="@+id/action_userLisFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="com.bichi.getallrepofromgit.view.UserDetailFragment"
+        android:label="UserDetailFragment" />
+</navigation>

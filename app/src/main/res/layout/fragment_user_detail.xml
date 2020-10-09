@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="java.util.List"/>
+        <import type="com.bichi.getallrepofromgit.model.Followers"/>
+        <variable
+            name="user"
+            type="com.bichi.getallrepofromgit.model.User" />
+        <variable
+            name="followers"
+            type="List&lt;Followers>" />
+    </data>
+
+    <LinearLayout
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".view.UserDetailFragment">
+
+        <ImageView
+            app:avatar="@{user.owner.avatarUrl}"
+            android:layout_gravity="center"
+            android:layout_width="120dp"
+            android:layout_height="120dp" />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:text="@{user.name}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:text="@{user.fullName}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:text="@{user.description}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:text="@{user.language}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:text="@{user.owner.login}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/white"
+            android:id="@+id/followers_user"
+            android:text="Users following's You"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:id="@+id/divider"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dataList="@{followers}"
+            android:clipToPadding="false"
+            android:scrollbars="vertical"
+            android:visibility="visible"
+            tools:listitem="@layout/item_user" />
+    </LinearLayout>
+
+
+</layout>
